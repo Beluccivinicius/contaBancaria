@@ -78,6 +78,7 @@ Scanner leia = new Scanner(System.in);
 			case 7:
 				
 				System.out.println("Depósito\n\n");
+				
 				break;
 				
 			case 8:
