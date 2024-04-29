@@ -1,12 +1,13 @@
 package conta;
 
 import java.util.Scanner;
+import conta.model.Conta;
 import conta.util.Cores;
 
 public class Menu {
 
 	public static void main(String[] args) {
-Scanner leia = new Scanner(System.in);
+		Scanner leia = new Scanner(System.in);
 		
 		int opcao;
 		

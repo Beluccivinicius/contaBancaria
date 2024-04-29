@@ -71,22 +71,20 @@ public class Conta {
 	//sacar
 	public boolean sacar(float quantia) {
 		
-		float saldo = getSaldo();
-		
-		if(this.getSaldo() < quantia) {
+		if(this.saldo < quantia) {
 			System.out.println("\nSaldo insuficiente!!!");
 			
 			return false;
 		}
 		
-		this.setSaldo(saldo - quantia);
+		this.saldo -= quantia;
 		
 		return true;
 	}
 	
 	//depositar
 	public void depositar(float quantia) {
-		setSaldo(getSaldo() + quantia);
+		setSaldo(this.saldo + quantia);
 	}
 	
 	//visualizar
@@ -94,9 +92,7 @@ public class Conta {
 		
 		String tipoConta = "";
 		
-		int tipo = getTipo();
-		
-		switch(tipo){
+		switch(this.tipo){
 			
 		case 1: 
 			tipoConta = "Conta Corrente";
@@ -118,7 +114,7 @@ public class Conta {
 	}
 	
 	//Teste
-	
+//	
 //	public static void main(String[] args) {
 //		Conta conta = new Conta(123, 346, 1, "Maria", 80.0f);
 //		
