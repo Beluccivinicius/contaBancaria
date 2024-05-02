@@ -2,12 +2,32 @@ package conta;
 
 import java.util.Scanner;
 import conta.model.Conta;
+import conta.model.ContaCorrente;
+import conta.model.ContaPoupanca;
 import conta.util.Cores;
 
 public class Menu {
 
 	public static void main(String[] args) {
 		Scanner leia = new Scanner(System.in);
+		
+		
+		ContaCorrente contaCorrente = new ContaCorrente(123, 123, 1, "João", 500.0f, 400.0f);
+		System.out.println(contaCorrente.sacar(700.0f));
+		contaCorrente.visualizar();
+		ContaCorrente contaCorrente2 = new ContaCorrente(123, 123, 1, "Ericles", 500.0f, 400.0f);
+		System.out.println(contaCorrente.sacar(700.0f));
+		contaCorrente.visualizar();
+		
+		ContaPoupanca contaPoupanca = new ContaPoupanca(123, 123, 2, "Maria", 700f, 12334);
+		System.out.println(contaPoupanca.sacar(800f));
+		contaPoupanca.visualizar();
+		
+		ContaPoupanca contaPoupanca2 = new ContaPoupanca(123, 123, 2, "Joel", 700f, 12334);
+		System.out.println(contaPoupanca.sacar(800f));
+		contaPoupanca.visualizar();
+		
+		
 		
 		int opcao;
 		
@@ -92,10 +112,10 @@ public class Menu {
 				System.out.println("\nOpção Inválida!\n");	
 				break;
 			}
-			
-			
+
 		}
 		
+	
 
 	}
 
