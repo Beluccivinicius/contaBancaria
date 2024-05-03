@@ -1,5 +1,8 @@
 package conta;
 
+import java.io.IOException;
+import java.util.InputMismatchException;
+
 import java.util.Scanner;
 import conta.model.Conta;
 import conta.model.ContaCorrente;
@@ -55,7 +58,13 @@ public class Menu {
 			System.out.println("                                                                        " 
 			+ Cores.TEXT_RESET);
 			
-			opcao = leia.nextInt();
+			try {
+				opcao = leia.nextInt();
+			}catch(InputMismatchException e){
+				System.out.println("\nDigite valores inteiros!");
+				leia.nextLine();
+				opcao=0;
+			}
 			
 			if (opcao == 9) {
 				System.out.println("\nBanco do Brazil com Z - O seu Futuro começa aqui!" + Cores.TEXT_YELLOW);
@@ -69,47 +78,55 @@ public class Menu {
 			case 1:
 				
 				System.out.println("Criar Conta \n\n");
+				keyPress();
 				break;
 				
 			case 2:
 				
 				System.out.println("Listar todas as Contas\n\n");
+				keyPress();
 				break;
 				
 			case 3:
 				
 				System.out.println("Consultar dados da Conta - por número\n\n");
+				keyPress();
 				break;
 				
 			case 4:
 				
 				System.out.println("Atualizar dados da Conta\n\n");
+				keyPress();
 				break;
 				
 			case 5:
 				
 				System.out.println("Apagar a Conta\n\n");
+				keyPress();
 				break;
 				
 			case 6:
 				
 				System.out.println("Saque\n\n");
+				keyPress();
 				break;
 				
 			case 7:
 				
 				System.out.println("Depósito\n\n");
-				
+				keyPress();
 				break;
 				
 			case 8:
 				
 				System.out.println("Transferência entre Contas\n\n");
+				keyPress();
 				break;
 				
 			default:
 				
 				System.out.println("\nOpção Inválida!\n");	
+				keyPress();
 				break;
 			}
 
@@ -128,5 +145,20 @@ public class Menu {
 		
 
 	}
+	
+	public static void keyPress() {
 
+		try {
+
+			System.out.println("\n\nPressione Enter para Continuar!!!");
+			System.in.read();
+
+		} catch (IOException e) {
+
+			System.out.println("Você pressionou uma tecla diferente de enter!");
+
+		}
+		
+
+	}
 }
